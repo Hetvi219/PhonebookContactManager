@@ -1,0 +1,106 @@
+﻿@model IEnumerable<PhonebookContactManager.Models.Address>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Address List</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a asp-controller="home">home</a></li>
+                    <li class="breadcrumb-item active">Address list</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+
+<div class="card">
+
+    <div class="card card-default">
+        <div class="card-header">
+            <div class="col-12">
+                <i class="fas fa-list">&nbsp;&nbsp;Address List</i><a asp-action="Create" class="btn bg-light border float-right"><i class="fas fa-plus"></i>&nbsp;<Strong>Add Address</Strong></a>
+            </div>
+        </div>
+    </div>
+
+    <div>
+
+        <div class="card-body">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="cbhi" role="tabpanel" aria-labelledby="cbhi-tab">
+                    <table id="dataTable" class="table table-sm table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.AddressOne)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.AddressTwo)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.City)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.StateOrProvince)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ZipOrPostalCode)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Country)
+                                </th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{ var count = 0;
+                            }
+                            @foreach (var item in Model)
+                            {
+                                count++;
+                                <tr>
+                                    <td>@count</td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AddressOne)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AddressTwo)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.City)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StateOrProvince)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ZipOrPostalCode)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Country)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="icon-cog text-primary fas fa-edit">Edit</a>&nbsp;&nbsp;
+                                        <a asp-action="Details" asp-route-id="@item.Id" class="icon-cog text-info fas fa-info-circle">Details</a>&nbsp;&nbsp;
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="icon-cog text-danger fas fa-trash">Delete</a> &nbsp;&nbsp;
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

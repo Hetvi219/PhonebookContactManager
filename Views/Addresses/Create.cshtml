@@ -1,0 +1,67 @@
+﻿@model PhonebookContactManager.Models.Address
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Address</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label asp-for="AddressOne" class="control-label"></label>
+                    <input asp-for="AddressOne" class="form-control" placeholder="Enter Address line 1"/>
+                    <span asp-validation-for="AddressOne" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="AddressTwo" class="control-label"></label>
+                    <input asp-for="AddressTwo" class="form-control" placeholder="Enter Address line 2"/>
+                    <span asp-validation-for="AddressTwo" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label asp-for="City" class="control-label"></label>
+                    <input asp-for="City" class="form-control" placeholder="Enter City"/>
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="StateOrProvince" class="control-label"></label>
+                    <input asp-for="StateOrProvince" class="form-control" placeholder="Enter State Or Province"/>
+                    <span asp-validation-for="StateOrProvince" class="text-danger"></span>
+                </div>                
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label asp-for="ZipOrPostalCode" class="control-label"></label>
+                    <input asp-for="ZipOrPostalCode" class="form-control" placeholder="Enter Zip or PostalCode "/>
+                    <span asp-validation-for="ZipOrPostalCode" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Country" class="control-label"></label>
+                    <input asp-for="Country" class="form-control" placeholder="Enter Country"/>
+                    <span asp-validation-for="Country" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

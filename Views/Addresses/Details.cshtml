@@ -1,0 +1,55 @@
+﻿@model PhonebookContactManager.Models.Address
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Address</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AddressOne) :
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AddressOne)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AddressTwo) :
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AddressTwo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.City) :
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.City)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StateOrProvince) :
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StateOrProvince)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ZipOrPostalCode) :
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ZipOrPostalCode)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Country) :
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="icon-cog text-primary fas fa-edit">Edit</a> &nbsp;&nbsp;
+    <a asp-action="Index">Back to List</a>
+</div>
